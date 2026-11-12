@@ -1,0 +1,285 @@
+
+/* =================================
+   MIND GAMES - THE LIVE QUIZ ARENA
+   Gaming Theme CSS
+================================= */
+
+:root {
+  --bg: #080d1b;
+  --card: #121b30;
+  --card-light: #1b2943;
+  --purple: #8057ff;
+  --cyan: #16e0d0;
+  --white: #ffffff;
+  --muted: #aab5ca;
+  --green: #28d99b;
+  --red: #ff5874;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top left, #28165c 0%, transparent 38%),
+    radial-gradient(circle at bottom right, #063e49 0%, transparent 35%),
+    var(--bg);
+  color: var(--white);
+  min-height: 100vh;
+  padding: 25px 16px;
+  line-height: 1.6;
+}
+
+main,
+.container,
+.app,
+.page {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin: 20px auto 35px;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 8vw, 4rem);
+  font-weight: 900;
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, var(--purple), var(--cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+p {
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.card,
+.panel,
+section,
+.question-card,
+.game-card,
+.leaderboard {
+  background: linear-gradient(
+    145deg,
+    rgba(27, 41, 67, .96),
+    rgba(15, 23, 40, .96)
+  );
+  border: 1px solid rgba(128, 87, 255, .25);
+  border-radius: 20px;
+  padding: 25px;
+  margin: 18px 0;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, .25);
+}
+
+input,
+textarea,
+select {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0 18px;
+  border-radius: 12px;
+  border: 1px solid #354563;
+  background: #080f20;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 12px rgba(22, 224, 208, .2);
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin: 12px 0 5px;
+}
+
+button,
+.button,
+a.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 22px;
+  margin: 6px 5px 6px 0;
+  background: linear-gradient(120deg, var(--purple), #536fff);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+button:hover,
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(128, 87, 255, .35);
+}
+
+button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+button.secondary {
+  background: var(--card-light);
+  border: 1px solid #40516f;
+}
+
+button.danger {
+  background: linear-gradient(120deg, #ff5874, #d92d55);
+}
+
+button.success {
+  background: linear-gradient(120deg, #13b98d, #087c68);
+}
+
+/* Quiz choices */
+
+.option,
+.answer-option,
+.choice {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: var(--card-light);
+  border: 1px solid #354563;
+  color: white;
+  padding: 16px;
+  border-radius: 14px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.option:hover,
+.answer-option:hover,
+.choice:hover {
+  border-color: var(--cyan);
+  background: #203553;
+}
+
+/* Game PIN */
+
+.pin,
+.game-pin,
+.score {
+  color: var(--cyan);
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-align: center;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+}
+
+/* Status and messages */
+
+#message,
+.message,
+.status {
+  padding: 13px;
+  margin: 12px 0;
+  border-radius: 12px;
+  background: rgba(128, 87, 255, .14);
+  color: #ded5ff;
+}
+
+.correct {
+  color: var(--green);
+}
+
+.incorrect,
+.error {
+  color: var(--red);
+}
+
+/* Leaderboard */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 13px 10px;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+th {
+  color: var(--cyan);
+}
+
+li {
+  padding: 7px 0;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  margin: 30px auto 10px;
+  font-size: 13px;
+}
+
+/* Mobile responsive */
+
+@media (max-width: 600px) {
+  body {
+    padding: 16px 12px;
+  }
+
+  .card,
+  .panel,
+  section,
+  .question-card,
+  .game-card,
+  .leaderboard {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  button,
+  .button,
+  a.button {
+    width: 100%;
+    margin: 6px 0;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
