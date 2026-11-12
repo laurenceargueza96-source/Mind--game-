@@ -1,8 +1,8 @@
 
-/* =====================================
+/* =================================
    MIND GAMES - THE LIVE QUIZ ARENA
-   Complete Gaming Theme
-===================================== */
+   Gaming Theme CSS
+================================= */
 
 :root {
   --bg: #080d1b;
@@ -14,7 +14,6 @@
   --muted: #aab5ca;
   --green: #28d99b;
   --red: #ff5874;
-  --border: #354563;
 }
 
 * {
@@ -44,47 +43,19 @@ main,
   margin: 0 auto;
 }
 
-.shell {
-  max-width: 900px;
-  margin: 25px auto;
-}
-
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
+  text-align: center;
   margin: 20px auto 35px;
-}
-
-.logo {
-  font-size: 25px;
-  font-weight: bold;
-  color: var(--cyan);
-}
-
-.tag {
-  color: var(--cyan);
-  font-size: 12px;
-  letter-spacing: 2px;
 }
 
 h1 {
   font-size: clamp(2.2rem, 8vw, 4rem);
   font-weight: 900;
   letter-spacing: 3px;
-  line-height: 1.15;
   background: linear-gradient(90deg, var(--purple), var(--cyan));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-}
-
-h1 span {
-  color: var(--cyan);
-  background: none;
-  -webkit-text-fill-color: var(--cyan);
 }
 
 h2 {
@@ -100,22 +71,6 @@ h3 {
 p {
   color: var(--muted);
   margin-bottom: 12px;
-}
-
-.hero {
-  background: linear-gradient(145deg, #1b2943, #121b30);
-  border: 1px solid rgba(128, 87, 255, .35);
-  border-radius: 22px;
-  padding: 35px;
-  margin: 18px 0;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, .25);
-}
-
-.eyebrow {
-  color: var(--cyan);
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 3px;
 }
 
 .card,
@@ -144,7 +99,7 @@ select {
   padding: 15px;
   margin: 10px 0 18px;
   border-radius: 12px;
-  border: 1px solid var(--border);
+  border: 1px solid #354563;
   background: #080f20;
   color: white;
   font-size: 16px;
@@ -158,23 +113,13 @@ select:focus {
   box-shadow: 0 0 12px rgba(22, 224, 208, .2);
 }
 
-label,
-.field {
+label {
   display: block;
   font-weight: bold;
   margin: 12px 0 5px;
 }
 
-.actions,
-.row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
 button,
-.btn,
 .button,
 a.button {
   display: inline-flex;
@@ -194,7 +139,6 @@ a.button {
 }
 
 button:hover,
-.btn:hover,
 .button:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 20px rgba(128, 87, 255, .35);
@@ -206,8 +150,7 @@ button:disabled {
   transform: none;
 }
 
-button.secondary,
-.secondary {
+button.secondary {
   background: var(--card-light);
   border: 1px solid #40516f;
 }
@@ -220,6 +163,8 @@ button.success {
   background: linear-gradient(120deg, #13b98d, #087c68);
 }
 
+/* Quiz choices */
+
 .option,
 .answer-option,
 .choice {
@@ -227,7 +172,7 @@ button.success {
   width: 100%;
   text-align: left;
   background: var(--card-light);
-  border: 1px solid var(--border);
+  border: 1px solid #354563;
   color: white;
   padding: 16px;
   border-radius: 14px;
@@ -242,6 +187,8 @@ button.success {
   background: #203553;
 }
 
+/* Game PIN */
+
 .pin,
 .game-pin,
 .score {
@@ -251,6 +198,8 @@ button.success {
   text-align: center;
   font-size: clamp(2rem, 8vw, 3.5rem);
 }
+
+/* Status and messages */
 
 #message,
 .message,
@@ -271,9 +220,7 @@ button.success {
   color: var(--red);
 }
 
-.hidden {
-  display: none !important;
-}
+/* Leaderboard */
 
 table {
   width: 100%;
@@ -302,23 +249,13 @@ footer {
   font-size: 13px;
 }
 
-.question {
-  font-size: 23px;
-  font-weight: bold;
-  margin: 20px 0;
-  color: white;
-}
-
-#live {
-  border-color: var(--purple);
-}
+/* Mobile responsive */
 
 @media (max-width: 600px) {
   body {
     padding: 16px 12px;
   }
 
-  .hero,
   .card,
   .panel,
   section,
@@ -330,30 +267,19 @@ footer {
   }
 
   button,
-  .btn,
   .button,
   a.button {
     width: 100%;
     margin: 6px 0;
   }
 
-  .actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .row {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
   h2 {
     font-size: 1.5rem;
   }
 
-  .pin,
-  .game-pin,
-  .score {
-    font-size: 32px;
+  input,
+  textarea,
+  select {
+    font-size: 16px;
   }
 }
